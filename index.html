@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Process Scheduler</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <marquee><strong>PBL PROJECT</strong></marquee>
+  <div class="container">
+    <h1>Process Scheduling Simulator</h1>
+
+    <marquee style="color: aquamarine; background-color: black;"><strong>Enter Process</strong></marquee>
+    <form id="processForm">
+      <input type="text" id="pid" placeholder="PID" required /> 
+      <input type="number" id="arrival" placeholder="Arrival Time" required />
+      <input type="number" id="burst" placeholder="Burst Time" required />
+      <input type="number" id="priority" placeholder="Priority (low=high)" required />
+      <button type="submit">Add Process</button>
+    </form>
+
+    <h2>Process List</h2>
+    <table id="processTable">
+      <thead>
+        <tr><th>PID</th><th>Arrival Time</th><th>Burst Time</th><th>Priority</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+      <button id="runFCFS">FCFS</button>
+      <button id="runSJF">SJF</button>
+      <button id="runRR">Round Robin</button>
+      <input type="number" id="timeQuantum" placeholder="Time Quantum" style="width: 100px; height: 60px;" />
+      <button id="runPriority">Priority</button>
+    </div>
+
+    <h2>Gantt Chart 👇</h2>
+    <div id="ganttChart"></div>
+
+    <h2>Scheduling Results 👇</h2>
+    <div id="results"></div>
+
+  
+    <div style="text-align: center; margin-top: 30px;">
+      <button id="compareAverages">Compare Averages</button>
+    </div>
+
+  
+    <div id="chartsArea" style="margin-top: 30px;">
+      <h2 style="text-align: center;">Comparison Charts 👇</h2>
+      <canvas id="tatChart" width="400" height="200"></canvas>
+      <canvas id="wtChart" width="400" height="200" style="margin-top: 40px;"></canvas>
+    </div>
+   
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
